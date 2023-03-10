@@ -1,4 +1,5 @@
 import * as city from "./weatherDb.mjs";
+import * as file from "./fileOp.mjs";
 // let location, lat, lng, humidity, presure, wind, temp;
 export function addData() {
   let dict = {
@@ -10,11 +11,10 @@ export function addData() {
     wind: "12",
     temp: "20",
   };
-  city.weatherData.push(dict);
+  file.arr.push(dict);
 }
 
 export function deleteData() {
-  
   let delPos = city.weatherData.findIndex((x) => x.location === "delhi");
   city.weatherData.splice(delPos, 1);
 }
@@ -25,3 +25,5 @@ export function updateData() {
     }
   });
 }
+
+
