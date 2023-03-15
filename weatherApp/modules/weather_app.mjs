@@ -1,6 +1,8 @@
 import * as city from "./weatherDb.mjs";
 import * as operation from "./dbOp.mjs";
 import * as file from "./fileOp.mjs";
+
+// Getting weather data for a location
 function getWeatherData(place) {
   const result = city.weatherData.find(function (e) {
     if (e.location == place) return e;
@@ -11,6 +13,7 @@ function getWeatherData(place) {
 const place = process.argv[2];
 getWeatherData(place);
 
+
 // list of cities
 function cityDatabase() {
   let cityList = city.weatherData;
@@ -20,35 +23,31 @@ function cityDatabase() {
   }
 }
 cityDatabase();
-//appendingfile
-// fo.fileAppend();
-// file read
-file.fileRead();
 
 
+// ADD Data
+// console.log("Adding kathmandu with data:");
+// operation.addData();
 
-
-
-//operations on weather data
-console.log("Adding kathmandu with data:");
-operation.addData();
-console.log(file.arr);
-// console.log(city.weatherData);
+// // DELETE data
 // console.log("database after deleting delhi:");
-// op.deleteData();
-// console.log(city.weatherData);
-// console.log("After updating humidity of noida ");
-// op.updateData();
-// console.log(city.weatherData);
+// operation.deleteData();
 
+// // UPDATE data
+// console.log("After updating humidity of noida ");
+// operation.updateData();
+
+
+
+//sample input example
 // function add(a, b) {
 //   console.log("add ->", Number(a) + Number(b));
 // }
-
 // const input = process.argv;
-
 // console.log(input[2]);
-
 // if (input[2] === "1") {
 //   add(input[3], input[4]);
 // }
+
+// file.fileWrite();
+// file.fileRead();

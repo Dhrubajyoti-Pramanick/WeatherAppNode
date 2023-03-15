@@ -7,6 +7,8 @@ export const weatherData = [
     presure: "1005",
     wind: "5",
     temp: "10",
+    farhenheit: "86",
+    condition: "Sunny"
   },
   {
     location: "mumbai",
@@ -16,15 +18,19 @@ export const weatherData = [
     presure: "985",
     wind: "7",
     temp: "12",
+    farhenheit: "91.4",
+    condition: "Overcast"
   },
   {
-    location: "delhi",
+    location: "new delhi",
     lat: "10",
     lng: "12",
     humidity: "103",
     presure: "1105",
     wind: "2",
     temp: "16",
+    farhenheit: "84.2",
+    condition: "Mist"
   },
   {
     location: "chennai",
@@ -34,6 +40,8 @@ export const weatherData = [
     presure: "805",
     wind: "10",
     temp: "17",
+    farhenheit: "86",
+    condition: "Partly cloudy"
   },
   {
     location: "kochi",
@@ -43,6 +51,8 @@ export const weatherData = [
     presure: "1005",
     wind: "5",
     temp: "18",
+    farhenheit: "89.6",
+    condition: "Rainy"
   },
   {
     location: "bengaluru",
@@ -52,6 +62,8 @@ export const weatherData = [
     presure: "1005",
     wind: "5",
     temp: "19",
+    farhenheit: "84.2",
+    condition: "Sunny"
   },
   {
     location: "ahmedabad",
@@ -61,6 +73,8 @@ export const weatherData = [
     presure: "1005",
     wind: "5",
     temp: "20",
+    farhenheit: "95",
+    condition: "Overcast"
   },
   {
     location: "noida",
@@ -70,5 +84,7 @@ export const weatherData = [
     presure: "1005",
     wind: "5",
     temp: "21",
+    farhenheit: "84.2",
+    condition: "Mist"
   },
 ];

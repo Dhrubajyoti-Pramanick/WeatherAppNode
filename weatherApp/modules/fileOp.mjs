@@ -1,14 +1,41 @@
 import * as fs from "fs";
 import * as city from "./weatherDb.mjs";
-// var fs = require('fs');
 
-let data = city.weatherData;
+const filePath = new URL("arrayData.txt", import.meta.url);
+export let content = city.weatherData;
 
+//Read file
+export function fileRead() {
+  console.log("opening file!");
+  console.log(content);
+  fs.readFile(filePath, function (data) {
+    console.log("Data: " + data);
+    content = JSON.parse(data);
+    console.log("reading data");
+    console.log("From text to array:");
+    console.log(content);
+  });
+}
+// create file
+export function fileCreate() {
+  console.log("Creating a file");
+  fs.writeFileSync(filePath, JSON.stringify(content));
+}
+
+// write file
+export function fileWrite() {
+  console.log("writing into existing file");
+  fs.writeFile(filePath, JSON.stringify(content), function (err, data) {
+    if (err) {
+      return console.error(err);
+    }
+  });
+}
 // Append data to file
 export function fileAppend() {
   fs.appendFile(
-    "arrayData.txt",
-    JSON.stringify(data),
+    filePath,
+    JSON.stringify(content),
     "utf8",
 
     // Callback function
@@ -20,28 +47,3 @@ export function fileAppend() {
     }
   );
 }
-export let arr=[];
-export function fileRead() {
-  console.log("opening file!");
-  fs.readFile('arrayData.txt', function (err, data) {
-    if (err) {
-       return console.error(err);
-    }
-    console.log("Data: " + data);
-    arr = JSON.parse(data);
-    console.log("From text to array:");
-    console.log(arr);
- });
-}
-
-export function fileWrite() {
-    console.log("writing into existing file");
-    fs.writeFile('arrayData.txt', arr, function(err) {
-    if (err) {
-      return console.error(err);
-    }
-   console.log("Data written successfully!");
-    });
-}
-// fileAppend(); 
-// fileRead();
