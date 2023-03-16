@@ -11,7 +11,7 @@ function getWeatherData(place) {
   console.log(result);
 }
 const place = process.argv[2];
-getWeatherData(place);
+// getWeatherData(place);
 
 
 // list of cities
@@ -22,7 +22,8 @@ function cityDatabase() {
     console.log(cityList[i].location);
   }
 }
-cityDatabase();
+// cityDatabase();
+file.fileWrite();
 
 
 // ADD Data
