@@ -25,7 +25,7 @@ export function deleteData() {
 export function updateData() {
   file.fileRead();
   file.content.find(function (e) {
-    if (e.location == "noida") {
+    if (e.location === "noida") {
       e.humidity = "100";
     }
   });

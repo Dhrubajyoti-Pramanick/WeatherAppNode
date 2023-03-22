@@ -27,7 +27,7 @@ export function delfolder() {
 export function rnamefolder() {
     path = `./${manager.file}`;
     if (fs.existsSync(path)) {
-        fs.rename(manager.file,manager.data, function (err) {
+        fs.rename(manager.file, manager.data, function (err) {
             console.log("Folder renamed!");
           });
       } else {

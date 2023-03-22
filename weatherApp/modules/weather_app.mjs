@@ -5,7 +5,7 @@ import * as file from "./fileOp.mjs";
 // Getting weather data for a location
 function getWeatherData(place) {
   const result = city.weatherData.find(function (e) {
-    if (e.location == place) return e;
+    if (e.location === place) return e;
   });
   console.log(`Weather data of ${place} is`);
   console.log(result);

@@ -15,7 +15,7 @@ export function addData() {
 export function delData() {
   path = `./${manager.file}`;
   if (fs.existsSync(path)) {
-    fs.truncate(manager.file,manager.data, function (err, f) {
+    fs.truncate(manager.file, manager.data, function (err, f) {
       console.log("Data from file deleted!");
     });
   } else {
@@ -26,7 +26,7 @@ export function delData() {
 export function readData() {
   path = `./${manager.file}`;
   if (fs.existsSync(path)) {
-    fs.readFile(manager.file,'utf8', function (err, data) {
+    fs.readFile(manager.file, 'utf8', function (err, data) {
       console.log(data);
     });
   } else {

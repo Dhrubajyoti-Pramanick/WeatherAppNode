@@ -1,12 +1,15 @@
-import * as fileoperation from "./fileOps.mjs";
-import * as dataoperation from "./dataOps.mjs";
-import * as folderoperation from "./folderOps.mjs";
+import * as fileOperation from "./fileOps.mjs";
+import * as dataOperation from "./dataOps.mjs";
+import * as folderOperation from "./folderOps.mjs";
 let input = process.argv;
+let task_no = input[2];
+let fileName = input[3];
+let none = undefined;
 export let path = process.cwd();
 export let file;
 export let data;
 
-if (input[2] == null) {
+if (task_no === none) {
   console.log("1.Enter 1 to create a file");
   console.log("2.Enter 2 to delete a file");
   console.log("3.Enter 3 to show list of files in current directory");
@@ -17,74 +20,75 @@ if (input[2] == null) {
   console.log("8.Enter 8 to delete a folder");
   console.log("9.Enter 9 to rename a folder");
   console.log("10.Enter 10 show list of folder in current directory");
-} else if (input[2] == "1") {
-  if (input[3] == null) {
+} else if (task_no === "1") {
+  if (fileName === none) {
     console.log("Enter the filename to add after 1 in terminal");
   }
-} else if (input[2] == "2") {
-  if (input[3] == null) {
+} else if (task_no === "2") {
+  if (fileName === none) {
     console.log("Enter the filename to delete after 2 in terminal");
   }
-} else if (input[2] == "3") {
+} else if (task_no === "3") {
   console.log("The list of files in the directory are:");
-} else if (input[2] == "4") {
-  if (input[3] == null) {
+} else if (task_no === "4") {
+  if (fileName === none) {
     console.log("Enter file name and data to add after 4:");
   }
-} else if (input[2] == "5") {
-  if (input[3] == null) {
+} else if (task_no === "5") {
+  if (fileName === none) {
     console.log("Enter the file name after 5 to delete it's content:");
   }
-} else if (input[2] == "6") {
-  if (input[3] == null) {
+} else if (task_no === "6") {
+  if (fileName === none) {
     console.log("Enter the file name after 6 to read it's content:");
   }
-} else if (input[2] == "7") {
-  if (input[3] == null) {
+} else if (task_no === "7") {
+  if (fileName === none) {
     console.log("Enter the folder name after 7 to add:");
   }
-} else if (input[2] == "8") {
-  if (input[3] == null) {
+} else if (task_no === "8") {
+  if (fileName === none) {
     console.log("Enter the folder name after 8 to delete:");
   }
-} else if (input[2] == "9") {
-  if (input[3] == null) {
+} else if (task_no === "9") {
+  if (fileName === none) {
     console.log("Enter the folder name and new folder name after 9:");
   }
-} else if (input[2] == "10") {
+} else if (task_no === "10") {
   console.log("The list of folder in the directory are:");
 } else {
   console.log("wrong Input");
 }
 
-if (input[3] != null && input[2] == "1") {
-  file = input[3];
-  fileoperation.fileadd();
-} else if (input[3] != null && input[2] == "2") {
-  file = input[3];
-  fileoperation.filedel();
-} else if (input[3] == null && input[2] == "3") {
-  fileoperation.filelist();
-} else if (input[3] != null && input[2] == "4") {
-  file = input[3];
+if (fileName !== none && task_no === "1") {
+  file = fileName;
+  fileOperation.fileadd();
+} else if (fileName !== none && task_no === "2") {
+  file = fileName;
+  fileOperation.filedel();
+} else if (fileName === none && task_no === "3") {
+  fileOperation.filelist();
+} else if (fileName !== none && task_no === "4") {
+  file = fileName;
   data = input[4];
-  dataoperation.addData();
-} else if (input[3] != null && input[2] == "5") {
-  file = input[3];
-  dataoperation.delData();
-} else if (input[3] != null && input[2] == "6") {
-  file = input[3];
-  dataoperation.readData();
-} else if (input[3] != null && input[2] == "7") {
-  file = input[3];
-  folderoperation.addfolder();
-} else if (input[3] != null && input[2] == "8") {
-  file = input[3];
-  folderoperation.delfolder();
-} else if (input[3] != null && input[2] == "9") {
-  file = input[3];
+  dataOperation.addData();
+} else if (fileName !== none && task_no === "5") {
+  file = fileName;
+  dataOperation.delData();
+} else if (fileName !== none && task_no === "6") {
+  file = fileName;
+  dataOperation.readData();
+} else if (fileName !== none && task_no === "7") {
+  file = fileName;
+  folderOperation.addfolder();
+} else if (fileName !== none && task_no === "8") {
+  file = fileName;
+  folderOperation.delfolder();
+} else if (fileName !== none && task_no === "9") {
+  file = fileName;
   data = input[4];
-  folderoperation.rnamefolder();
-} else if (input[3] == null && input[2] == "10") {
-  folderoperation.folderlist();
-}
+  folderOperation.rnamefolder();
+} else if (fileName === none && task_no === "10") {
+  folderOperation.folderlist();
+ } 
+
