@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import * as manager from "./filemanager.mjs";
+import * as manager from "./fileManager.mjs";
 let path;
 export function addData() {
   path = `./${manager.file}`;
@@ -8,7 +8,7 @@ export function addData() {
       console.log("Data to file added!");
     });
   } else {
-    console.log("file does not exist");
+    console.log("File does not exist");
   }
 }
 
@@ -19,7 +19,7 @@ export function delData() {
       console.log("Data from file deleted!");
     });
   } else {
-    console.log("file does not exist");
+    console.log("File does not exist");
   }
 }
 
@@ -30,6 +30,6 @@ export function readData() {
       console.log(data);
     });
   } else {
-    console.log("file does not exist");
+    console.log("File does not exist");
   }
 }

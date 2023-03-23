@@ -22,7 +22,7 @@ export const weatherData = [
     condition: "Overcast"
   },
   {
-    location: "new delhi",
+    location: "newDelhi",
     lat: "10",
     lng: "12",
     humidity: "103",

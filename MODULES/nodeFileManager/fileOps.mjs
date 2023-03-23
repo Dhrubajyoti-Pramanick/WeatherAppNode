@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import * as manager from "./filemanager.mjs";
+import * as manager from "./fileManager.mjs";
 export function fileadd() {
   fs.open(manager.file, "w", function (err, f) {
     console.log("File created!");
@@ -13,7 +13,7 @@ export function filedel() {
       console.log("File deleted!");
     });
   } else {
-    console.log("file does not exist");
+    console.log("File does not exist");
   }
 }
 
